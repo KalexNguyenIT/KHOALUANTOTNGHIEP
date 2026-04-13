@@ -15,8 +15,8 @@ def set_template(args):
     if args.dataset_code == None:
         print('******************** Dataset Selection ********************')
         dataset_code = {'1': 'ml-100k', 'b': 'beauty', 'g': 'games'}
-        dt=input('Input 1 for ml-100k, b for beauty and g for games: ')
-        args.dataset_code = dataset_code[dt]
+        for key, name in dataset_code.items():
+            args.dataset_code = dataset_code[key]
 
     if args.dataset_code == 'ml-100k':
         args.bert_max_len = 200
